@@ -20,3 +20,7 @@
 ### Run "Skin Tone Extraction" file
 - This step can take a long time (a full day)
 - Option to exclude this step, just will have to slightly edit code in **Image Filtering to Final Dataset** file to ignore this piece
+
+
+### Run "Image Filtering to Final Dataset" file
+- This file populates our image training folders based off of our preprocessing steps
