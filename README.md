@@ -26,3 +26,7 @@
 
 ### Run "Image Filtering to Final Dataset" file
 - This file populates our image training folders based off of our preprocessing steps
+
+
+### Run "generate_image_data_script" python script
+- this loads all images into an h5py and extracts their deep feature representations
