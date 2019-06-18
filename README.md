@@ -9,6 +9,7 @@
 - place downloaded image directory into **data** subdirectory
 - title the image directory: **celeba**
 - download attribute file: "list_attr_celeba.txt" and place into **data** subdirectory
+- download "list_eval_partition.txt" file and place into **data** subdirectory
 
 
 ### Rotate Images to Unified Template:
