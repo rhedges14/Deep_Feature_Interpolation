@@ -45,3 +45,8 @@
 - This is the scipt that trains a full network to output a mask
 - Note that models will be saved into **models** subdirectory
 - Be prepared to specify the directory of training images. Note that the directory must contain two subdirectories for code to work. One of them can be empty. The **Image Filtering to Final Dataset** file should have set up correctly for this.
+
+
+### "Predict_DFI_script"
+- This is used to use trained Fast DFI networks to apply transformations to new images
+- Be prepared to input the name and directory of the image you wish you transform
