@@ -14,3 +14,8 @@
 ### Rotate Images to Unified Template:
 - Run **Facial Landmark Detection and Alignment** notebook steps through the **Process All Images** cell
 - This creates a new directory called **celeba_aigned_cropped** within your data folder with the output images
+
+
+### Run "Skin Tone Extraction" file
+- This step can take a long time (a full day)
+- Option to exclude this step, just will have to slightly edit code in **Image Filtering to Final Dataset** file to ignore this piece
