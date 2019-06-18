@@ -35,3 +35,7 @@
 - this calculates and saves the deep feature attribute vector which will be used during training
 
 
+### Run "DFI Script"
+- This is the DFI script that trains and optimizes a mask for individual images
+- Note that you should be prepared to specify in the argument the name and directory of the image you wish you transform
+- Output appears in a "bearded" folder
