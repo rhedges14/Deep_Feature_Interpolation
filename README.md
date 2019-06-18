@@ -3,6 +3,8 @@
 ### Prerequisites:
 - download DLIB library API for access to **get_frontal_face_detector()**; only needed for preprocessing steps
 
+### The following steps are meant to be run in the order that they appear
+
 ### Download Dataset:
 - CelebA
 - http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
