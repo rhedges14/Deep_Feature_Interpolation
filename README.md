@@ -35,7 +35,13 @@
 - this calculates and saves the deep feature attribute vector which will be used during training
 
 
-### Run "DFI Script"
+### "DFI Script"
 - This is the DFI script that trains and optimizes a mask for individual images
 - Note that you should be prepared to specify in the argument the name and directory of the image you wish you transform
 - Output appears in a "bearded" folder
+
+
+### "Fast_DFI_scipt"
+- This is the scipt that trains a full network to output a mask
+- Note that models will be saved into **models** subdirectory
+- Be prepared to specify the directory of training images. Note that the directory must contain two subdirectories for code to work. One of them can be empty. The **Image Filtering to Final Dataset** file should have set up correctly for this.
