@@ -30,3 +30,8 @@
 
 ### Run "generate_image_data_script" python script
 - this loads all images into an h5py and extracts their deep feature representations
+
+### Run "Calc_Attribute_Vector" python script
+- this calculates and saves the deep feature attribute vector which will be used during training
+
+
