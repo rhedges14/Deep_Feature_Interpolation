@@ -41,7 +41,7 @@
 - Output appears in a "bearded" folder
 
 
-### "Fast_DFI_scipt"
+### "Fast_DFI_script"
 - This is the scipt that trains a full network to output a mask
 - Note that models will be saved into **models** subdirectory
 - Be prepared to specify the directory of training images. Note that the directory must contain two subdirectories for code to work. One of them can be empty. The **Image Filtering to Final Dataset** file should have set up correctly for this.
