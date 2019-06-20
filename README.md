@@ -27,7 +27,7 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 # Instructions
 
 ### Prerequisites:
-- download DLIB library API for access to **get_frontal_face_detector()**; only needed for preprocessing steps
+- download DLIB library API for access to **get_frontal_face_detector()**
 
 ### The following steps are meant to be run in the order that they appear
 
