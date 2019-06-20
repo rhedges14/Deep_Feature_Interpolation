@@ -41,7 +41,7 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 - download "list_eval_partition.txt" file and place into **data** subdirectory (currently already in **data** subdirectory)
 
 
-### Rotate Images to Unified Template:
+### Rotate Images to Unified Template and create table of Facial Landmark Data:
 - Run **Facial Landmark Detection and Alignment** notebook steps through the **Process All Images** cell
 - This creates a new directory called **celeba_aigned_cropped** within your data folder with the output images
 
