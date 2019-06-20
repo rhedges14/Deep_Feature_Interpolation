@@ -48,11 +48,14 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 
 ### Run "Skin Tone Extraction" file
 - This step can take a long time (a full day)
-- Option to exclude this step, just will have to slightly edit code in **Image Filtering to Final Dataset** file to ignore this piece
+- Option to exclude this step, just will have to slightly edit code in **Image Filtering to Final Dataset** file to ignore the table that is created from this file
 
 
 ### Run "Image Filtering to Final Dataset" file
-- This file populates our image training folders based off of our preprocessing steps
+- This file populates the image training folders based off of the preprocessing steps
+- Run in jupyter notebook
+- Note that if you did not run the "Skin Tone Extraction" file, you will have to make a minor tweak in code as a table will be referenced that doesn't exist
+- Note that depending on what type of model you are building (clean to beard, or beard to clean), you will run 1 of the 2 final cells. Follow instructions in notebook
 
 
 ### Run "generate_image_data_script" python script
