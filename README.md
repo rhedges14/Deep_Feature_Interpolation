@@ -28,6 +28,7 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 
 ### Prerequisites:
 - download DLIB library API for access to **get_frontal_face_detector()**
+- Note that DLIB's **68_face_landmarks_predictor** model is saved in the **models** subdirectory
 
 ### The following steps are meant to be run in the order that they appear
 
@@ -36,8 +37,8 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 - http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 - place downloaded image directory into **data** subdirectory
 - title the image directory: **celeba**
-- download attribute file: "list_attr_celeba.txt" and place into **data** subdirectory
-- download "list_eval_partition.txt" file and place into **data** subdirectory
+- download attribute file: "list_attr_celeba.txt" and place into **data** subdirectory (currently already in **data** subdirectory)
+- download "list_eval_partition.txt" file and place into **data** subdirectory (currently already in **data** subdirectory)
 
 
 ### Rotate Images to Unified Template:
