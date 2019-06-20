@@ -1,3 +1,29 @@
+# Deep Feature Interpolation for Facial Hair Transformation
+
+**Project Status: Completed**
+
+### Project Objective
+The objective of this project is to leverage Deep Feature Interpolation (DFI) techniques to apply facial hair transformations to facial images. Multiple implementations will be explored. An approach is first constructed that involves an individual training optimization phase for each image before extending the project to an enhanced implementation where a single neural network will be trained per transformation that has the ability to generalize to any input image, thus providing for a functionality where the transformation can render in a matter of seconds.
+
+### Methods Used
+- Machine Learning
+- Deep Learning
+- Machine Vision
+
+### Technologies
+- Python
+- Jupyter Notebooks
+- Tensorflow and Keras
+- opencv
+
+### Executive Summary
+Deep Feature Interpolation (DFI) is a method that leverages feature representations to apply image transformations via an interpolation vector. 
+
+For this project, a DFI algorithm is implemented to transform facial hair. In particular, the algorithm is trained to add and remove attributes such as beards and mustaches. 
+
+Additionally, a Fast DFI algorithm is created based on work in Fast Style Transfer, where a network is trained with the ability to perform a single forward pass on an image to generate a facial transformation mask. Various nuances and additional enhancements to further improve the algorithm are also discussed.
+
+
 # Instructions
 
 ### Prerequisites:
