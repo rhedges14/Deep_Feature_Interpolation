@@ -48,6 +48,7 @@ def import_image(image,
 
 
 def dfi(test_img_name,
+          test_img_dir,
           attribute_vector_file,
           alpha=4,
           train_iterations=12,
@@ -55,7 +56,6 @@ def dfi(test_img_name,
           img_width=176,
           total_variation_weight=1e-2,
           tv_exp=1.25,
-          test_img_dir="data/val/no_attribute",
           h5_feature_file="data/images_train.h5",
           destination_file='data/bearded_images/'):
     
@@ -64,6 +64,7 @@ def dfi(test_img_name,
     
     Inputs:
         test_img_name - file name of input image
+        attribute_vector_file - destination of numpy attribute_vector used for interpolation
         alpha - controls magnitude of attribute vector; larger alpha produces more extreme interpolation
         train_iterations - number of gradient descent iterations
         img_height - height of input image
