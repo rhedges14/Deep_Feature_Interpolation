@@ -96,5 +96,3 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
     - filepath for the model weights to be loaded in for prediction
     - image name and filepath
     - output directory to save mask
-      
-      Be prepared to input the name and directory of the image you wish you transform
