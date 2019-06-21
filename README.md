@@ -31,7 +31,9 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 - Note that DLIB's **68_face_landmarks_predictor** model is saved in the **models** subdirectory
 
 ### The following steps are meant to be run in the order that they appear
-#### Note that if the only interest is to run the prediction algorithm, skip down to the "Prediction" files at the bottom
+- **Note that if the only interest is to run the prediction algorithm, skip down to the "Prediction" files at the bottom**
+    - "DFI_Script" (to run optimization algorithm for an individual image)
+    - "Predict_DFI_mask" + "Post-Processing Mask" (to run pretrained Neural Net to apply transformation to image)
 
 
 ### Download Dataset:
@@ -97,7 +99,7 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
     - image name and filepath
     - output directory to save mask
 
-### "Post-Processing Mask"
+### "Post-Processing Mask" (to be run immediately after the "Predict_DFI_mask" script
 - This file takes the output of the **Predict_DFI_mask** file and applies post-processing work before applying and saving a final image
 - This to be run in a Jupyter Notebook
 - Key arguments to specify:
