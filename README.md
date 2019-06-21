@@ -67,7 +67,7 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 - This calculates and saves the deep feature attribute vector which will be used during training
 - Be prepared to specify attribute that is to be transformed (added/removed)
 
-### "DFI Script"
+### "DFI_Script"
 - This is the DFI script that trains and optimizes a mask for individual images
 - Note that you should be prepared to specify the name and directory of the image you wish you transform, the alpha, and the number of training iterations (12 is a good starting point for iterations)
 - Output appears in a "bearded" folder; or feel free to modify destination folder
@@ -76,7 +76,16 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 ### "Fast_DFI_script"
 - This is the scipt that trains a full network to output a mask
 - Note that models will be saved into **models** subdirectory
-- Be prepared to specify the directory of training images. Note that the directory must contain two subdirectories for code to work. One of them can be empty. The **Image Filtering to Final Dataset** file should have set up correctly for this.
+- Arguments to specify:
+    - filepath for attribute vector
+    - directory of training images. Note that the directory must contain two subdirectories for code to work. One of them should be empty.
+    - Number of epochs
+    - Whether to load weights and if so, the filepath
+    - filepath to save the final model
+    - number of epochs between each saving checkpoint
+    - Early stopping patience
+    
+    The **Image Filtering to Final Dataset** file should have set up correctly for this.
 
 
 ### "Predict_DFI_script"
