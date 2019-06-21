@@ -96,3 +96,11 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
     - filepath for the model weights to be loaded in for prediction
     - image name and filepath
     - output directory to save mask
+
+### "Post-Processing Mask"
+- This file takes the output of the **Predict_DFI_mask** file and applies post-processing work before applying and saving a final image
+- This to be run in a Jupyter Notebook
+- Key arguments to specify:
+    - filepath to the original image
+    - filepath to the saved mask (output of **Predict_DFI_mask**)
+    - Output directory
