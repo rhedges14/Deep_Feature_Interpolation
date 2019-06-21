@@ -76,7 +76,7 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 ### "Fast_DFI_script"
 - This is the scipt that trains a full network to output a mask
 - Note that models will be saved into **models** subdirectory
-- Arguments to specify:
+- Key arguments to specify:
     - filepath for attribute vector
     - directory of training images. Note that the directory must contain two subdirectories for code to work. One of them should be empty.
     - Number of epochs
@@ -88,6 +88,13 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
     The **Image Filtering to Final Dataset** file should have set up correctly for this.
 
 
-### "Predict_DFI_script"
-- This is used to use trained Fast DFI networks to apply transformations to new images
-- Be prepared to input the name and directory of the image you wish you transform
+### "Predict_DFI_mask"
+- This is used to apply a trained Fast DFI network to "predict" and perform a transformation to a new image
+- Note that output is a Mask, NOT the transformed image
+- This is to be run in a Jupyter Notebook
+- Key arguments to specify:
+    - filepath for the model weights to be loaded in for prediction
+    - image name and filepath
+    - output directory to save mask
+      
+      Be prepared to input the name and directory of the image you wish you transform
