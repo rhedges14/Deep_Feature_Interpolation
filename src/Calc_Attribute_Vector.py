@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 def calc_attribute_vector(dest_file,
+                          attribute,
                           img_height=220,
                           img_width=176,
                           attribute_reference_csv="data/attribute_reference_df.csv",
@@ -17,18 +18,23 @@ def calc_attribute_vector(dest_file,
                           vgg19_weights_file="models/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5",
                           vgg_output_layers=["block3_conv1", "block4_conv1", "block5_conv1"],
                           vgg_output_layer_weights=[1.0, 1.0, 1.0]):
+    
+    
     """
     Calculates the deep feature attribute vector for a given transformation
     
     Inputs:
+        dest_file - destination file to save numpy attribute vector
+        attribute - attribute to transform (ex. "Beard"); must choose from list of attributes
         img_height - height of input image
         img_width - height of output image
+        h5_feature_file - h5py file containing all deep feature vectors
+        attribute_reference_csv - table containing image names and attribute information
         vgg_output_layers - list of vgg19 layers to be used for deep feature representation
-        vgg_output_layer_weights - list of vgg19 layers to be used for deep feature representation
-        h5_feature_file
-        attribute_reference_csv
-        
+        vgg_output_layer_weights - list of vgg19 layers to be used for deep feature representation       
     """
+    
+    
     vgg = VGG19(weights='imagenet',
                 include_top=False,
                 input_shape=(img_height, img_width, 3))
@@ -43,12 +49,16 @@ def calc_attribute_vector(dest_file,
             data_df = pd.read_csv(attribute_reference_csv)
         except:
             print("No Index Table Found for Attribute Groupings")
-
+        
+        # This line filters on only training data (no val or test) and limits the size to the size of the h5py file
         data_train_df = data_df[data_df['Group'] == 0].iloc[:images_h5py['img_data'].shape[0]]
+        
+        # NOTE THAT FOR THE ACTUAL ANALYSIS I USED THE COMMENTED OUT BLOCK OF CODE W/ 5 o'clock shadow
+#       yes_attribute_index = data_train_df[(data_train_df['Beard'] == 1) & # make this an input
+#                                       (data_train_df['5_o_Clock_Shadow'] == 0)].index
 
-        yes_attribute_index = data_train_df[(data_train_df['Beard'] == 1) & # make this an input
-                                      (data_train_df['5_o_Clock_Shadow'] == 0)].index
-        no_attribute_index = data_train_df[data_train_df['Beard'] == 0].index
+        yes_attribute_index = data_train_df[data_train_df[attribute] == 1].index
+        no_attribute_index = data_train_df[data_train_df[attribute] == 0].index
 
 
         # Get the deep features, flatten and concatenate
@@ -85,7 +95,8 @@ def calc_attribute_vector(dest_file,
 
 def main():
     """Main entry point for script"""
-    calc_attribute_vector(dest_file='data/beard_attribute_vec.npy')
+    calc_attribute_vector(dest_file='data/beard_attribute_vec.npy',
+                          attribute='Beard')
 
     
     
