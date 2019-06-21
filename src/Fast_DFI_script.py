@@ -52,10 +52,11 @@ def construct_model(attribute_vector_file,
     feature space for purposes of calculating loss
     
     Inputs:
+        attribute_vector_file - location of attribute_vector to be used for interpolation
         img_height - height of input image
         img_width - width of input image
-        alpha - controls magnitude of attribute vector; larger alpha produces more extreme interpolation
         TV_weight - weight given to total variation loss expression
+        alpha - controls magnitude of attribute vector; larger alpha produces more extreme interpolation
         vgg19_weights_file - h5py file containing pretrained weights for vgg19
         vgg_output_layers - list of vgg19 layers to be used for deep feature representation
         vgg_output_layer_weights - weights to be applied to corresponding vgg_output_layers
@@ -394,6 +395,8 @@ def train_model(train_imgs_dir,
                 load_weights_path,
                 save_model_path,
                 model,
+                es_patience,
+                epochs_checkpoint,
                 batch_size=1,
                 img_height=220,
                 img_width=176):
@@ -435,9 +438,9 @@ def train_model(train_imgs_dir,
     datagen = ImageDataGenerator(rescale=1)
     dummy_output = np.zeros((batch_size, img_height, img_width, 3))
     
-    estop = EarlyStopping(monitor='loss',patience=100)
-    mc = ModelCheckpoint('models/weights-{epoch:02d}-{loss:.0f}.h5', 
-                          save_weights_only=True, period=300)
+    estop = EarlyStopping(monitor='loss',patience=es_patience)
+    mc = ModelCheckpoint(save_model_path[:-3]+'-{epoch:02d}-{loss:.0f}.h5', 
+                          save_weights_only=True, period=epochs_checkpoint)
 
     train_generator = datagen.flow_from_directory(train_images_dir,
                                                   target_size=(img_height, img_width),
@@ -471,7 +474,9 @@ def main():
                         load_weights_path=None,
                         model=model,
                         save_model_path='models/fast_dfi_test.h5',
-                        batch_size=1)
+                        batch_size=1,
+                        epochs_checkpoint=300,
+                        es_patience=500)
     return hist
 
 if __name__ == '__main__':
