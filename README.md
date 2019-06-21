@@ -61,16 +61,16 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 
 
 ### Run "generate_image_data_script" python script
-- this loads all images into an h5py and extracts their deep feature representations
+- This loads all images into an h5py and extracts their deep feature representations to be used during modeling
 
 ### Run "Calc_Attribute_Vector" python script
-- this calculates and saves the deep feature attribute vector which will be used during training
-
+- This calculates and saves the deep feature attribute vector which will be used during training
+- Be prepared to specify attribute that is to be transformed (added/removed)
 
 ### "DFI Script"
 - This is the DFI script that trains and optimizes a mask for individual images
-- Note that you should be prepared to specify in the argument the name and directory of the image you wish you transform
-- Output appears in a "bearded" folder
+- Note that you should be prepared to specify the name and directory of the image you wish you transform, the alpha, and the number of training iterations (12 is a good starting point for iterations)
+- Output appears in a "bearded" folder; or feel free to modify destination folder
 
 
 ### "Fast_DFI_script"
