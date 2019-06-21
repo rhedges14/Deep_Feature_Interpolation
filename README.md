@@ -31,6 +31,8 @@ Additionally, a Fast DFI algorithm is created based on work in Fast Style Transf
 - Note that DLIB's **68_face_landmarks_predictor** model is saved in the **models** subdirectory
 
 ### The following steps are meant to be run in the order that they appear
+#### Note that if the only interest is to run the prediction algorithm, skip down to the "Prediction" files at the bottom
+
 
 ### Download Dataset:
 - CelebA
